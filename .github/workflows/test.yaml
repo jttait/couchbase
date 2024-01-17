@@ -12,5 +12,7 @@ jobs:
           set -x
           docker version
           docker run --rm hello-world
-          go version
+      - name: Install Docker Go SDK
+        run: |
+          go get github.com/docker/docker/client
 
