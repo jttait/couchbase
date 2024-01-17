@@ -24,7 +24,8 @@ func main() {
 	}
 	io.Copy(os.Stdout, reader)
 
-	resp, err := cli.ContainerCreate(ctx, &container.Config{
+	/*resp,*/
+	_, err := cli.ContainerCreate(ctx, &container.Config{
 		Image: "couchbase",
 	}, nil, nil, nil, "")
 	if err != nil {
