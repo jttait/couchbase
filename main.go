@@ -8,7 +8,6 @@ import (
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/client"
-	"github.com/docker/docker/pkg/stdcopy"
 )
 
 func main() {
@@ -32,7 +31,7 @@ func main() {
 		panic(err)
 	}
 
-	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
+	/*if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
 		panic(err)
 	}
 
@@ -50,5 +49,5 @@ func main() {
 		panic(err)
 	}
 
-	stdcopy.StdCopy(os.Stdout, os.Stderr, out)
+	stdcopy.StdCopy(os.Stdout, os.Stderr, out)*/
 }
