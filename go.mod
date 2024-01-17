@@ -1,6 +1,6 @@
 module couchbasetest
 
-go 1.21.6
+go 1.21
 
 require github.com/docker/docker v24.0.7+incompatible
 
