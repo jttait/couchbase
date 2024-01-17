@@ -24,19 +24,18 @@ func main() {
 	}
 	io.Copy(os.Stdout, reader)
 
-	/*resp,*/
-	_, err = cli.ContainerCreate(ctx, &container.Config{
+	resp, err := cli.ContainerCreate(ctx, &container.Config{
 		Image: "couchbase",
 	}, nil, nil, nil, "")
 	if err != nil {
 		panic(err)
 	}
 
-	/*if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
+	if err := cli.ContainerStart(ctx, resp.ID, types.ContainerStartOptions{}); err != nil {
 		panic(err)
 	}
 
-	statusCh, errCh := cli.ContainerWait(ctx, resp.ID, container.WaitConditionNotRunning)
+	/*statusCh, errCh := cli.ContainerWait(ctx, resp.ID, container.WaitConditionNotRunning)
 	select {
 	case err := <-errCh:
 		if err != nil {
